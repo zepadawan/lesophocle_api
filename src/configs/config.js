@@ -8,15 +8,19 @@ const userRoles = {
 const config = {
 
   server: {
-    portServer: 8081,
+    portServer: 8082,
     host_dev: 'https://localhost',
     host_prod: 'https://lesophocle.com',
+  },
+
+  email: {
+    user: 'lesophocledev@gmail.com',
   },
 
   dbConfig: {
     port: 3306,
     host: '178.170.8.35',
-    database: 'cbialy',
+    database: 'lesophocle',
     username: 'jfp',
     password: 'Zepadawan123',
 

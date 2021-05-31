@@ -1,14 +1,12 @@
 
 import Sequelize from 'sequelize';
-import config from './config.js';
-
 
 
 // initialze an instance of Sequelize
 const sequelize = new Sequelize({
   host: '178.170.8.35',
   port: 3306,
-  database: 'cbialy',
+  database: 'lesophocle',
   username: 'jfp',
   password: 'Zepadawan123',
   dialect: 'mysql',

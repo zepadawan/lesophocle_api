@@ -10,6 +10,7 @@ import path from 'path';
 import fs from 'fs';
 import _ from 'lodash';
 import uploadService from './src/services/upload.service.js';
+import sendmail from './src/services/email.service.js';
 
 const app = express();
 app.use(cors());
@@ -31,16 +32,21 @@ app.use((req, res, next) => {
 global.__dirname = process.cwd();
 console.log('__dirname = ' + __dirname);
 
-// uploads
+// uploads<
 app.use('/upload', uploadService);
 
-// app.use(express.static('/public'));
+// email
+app.post('/email', sendmail);
+
+
 // app.use('/static', express.static(__dirname + '/public'));
 app.use('/public', express.static(path.join(__dirname, '/public')));
 
+// routes
 import routes from './src/routes/routes.js';
 app.use('/', routes);
 
+// config server
 var host;
 console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'dev') {
@@ -49,15 +55,12 @@ if (process.env.NODE_ENV === 'dev') {
   host = config.server.host_prod
 }
 console.log(host);
-
-
 app.set('port', port);
 
-// Certificate
+// Certificate https
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/lesophocle.com/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/live/lesophocle.com/cert.pem', 'utf8');
 const ca = fs.readFileSync('/etc/letsencrypt/live/lesophocle.com/chain.pem', 'utf8');
-
 const credentials = {
   key: privateKey,
   cert: certificate,
@@ -73,22 +76,11 @@ var port = normalizePort(process.env.PORT || '8082');
 app.set('port', port);
 server.listen(port);
 
-// const privateKey = fs.readFileSync('/etc/letsencrypt/live/christianbialy.com/privkey.pem', 'utf8');
-// const certificate = fs.readFileSync('/etc/letsencrypt/live/christianbialy.com/cert.pem', 'utf8');
-// const ca = fs.readFileSync('/etc/letsencrypt/live/christianbialy.com/chain.pem', 'utf8');
-
-// const credentials = {
-// 	key: privateKey,
-// 	cert: certificate,
-// 	ca: ca
-// };
-
-
 server.on('listening', onListening);
 console.log(`App listening at ${host}:${port} `);
 
+// retour test OK
 app.get('/', (req, res) => res.send('Hello my World'));
-
 
 
 // _helpers
