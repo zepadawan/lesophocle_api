@@ -5,31 +5,25 @@ import config from '../configs/config.js';
 export async function sendmail(req, res, next) {
 
   console.log(req.body);
-
-  let sender = req.body.sender;
-
+  let sender = req.body;
   const transporter = nodemailer.createTransport({
-    host: "178.170.8.35",
+    host: "hb57249flex.ikexpress.com",
     port: 25,
-    // port: 465,
-    secure: false, // true for 465, false for other ports
+    secure: false,
     auth: {
-      // type: 'PLAIN',
-      user: 'zepadawan@gmail.com', // generated ethereal user
-      pass: 'SSwo425j', // generated ethereal password
+      user: 'zepadawan@gmail.com',
+      pass: 'SSwo425j',
     },
-    // authMethod: 'NTLM',
     tls: { rejectUnauthorized: false },
-    // debug: true
   });
 
   const mailOptions = {
     from: sender.email,
     to: 'zepadawan@gmail.com',
     subject: sender.subject,
-    message: sender.message,
+    text: sender.message,
+    html: "<p>" + sender.message + "</p>"
   }
-  console.log(mailOptions);
 
   transporter.sendMail(mailOptions)
     .then(() => res.send({
