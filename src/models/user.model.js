@@ -21,7 +21,7 @@ User.associate = function (models) {
 
 // create table with user model
 User.sync()
-  .then(() => console.log('Users table created successfully'))
+  .then(() => console.log('Table des Users created successfully'))
   .catch(err => console.log('oooh, did you enter wrong database credentials?'));
 
 export default User;

@@ -1,4 +1,4 @@
-import { getAll } from '../services/categorie.service.js';
+import { getAll, getById, create, update, _delete } from '../services/categorie.service.js';
 
 export function getAllCategories(req, res, next) {
   return getAll(req, res)

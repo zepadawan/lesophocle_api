@@ -7,7 +7,7 @@ const Plat = sequelize.define(
   libelle: { type: Sequelize.STRING, allowNull: false },
   id_categorie: { type: Sequelize.INTEGER, allowNull: false },
   prix: { type: Sequelize.STRING, allowNull: false },
-  order: { type: Sequelize.INTEGER, allowNull: true },
+  ordre: { type: Sequelize.INTEGER, allowNull: true },
   poids_dimension: { type: Sequelize.STRING, allowNull: true },
   description: { type: Sequelize.STRING, allowNull: true },
   sous_titre: { type: Sequelize.STRING, allowNull: true },

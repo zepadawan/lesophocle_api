@@ -5,7 +5,7 @@ export async function getAll() {
 }
 
 export function getById(id) {
-  return getTexte(id);
+  return getCategorie(id);
 }
 
 export function create(req) {
@@ -17,7 +17,7 @@ export async function update(id, params) {
 }
 
 export async function _delete(id) {
-  const categorie = await getTexte(id);
+  const categorie = await getCategorie(id);
   await categorie.destroy();
 }
 

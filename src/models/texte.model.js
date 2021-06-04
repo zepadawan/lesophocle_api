@@ -17,7 +17,7 @@ Texte.associate = function (models) {
 
 // create table with user model
 Texte.sync()
-  .then(() => console.log('Texte table created successfully'))
+  .then(() => console.log('Table des Textes created successfully'))
   .catch(err => console.log('oooh, did you enter wrong database credentials?'));
 
 export default Texte;

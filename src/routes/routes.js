@@ -6,6 +6,7 @@ import { renameFile, send_file_using_promise } from '../controllers/test.control
 import { getAllTextes, getTexteById, createTexte, updateTexte, deleteTexte } from '../controllers/texte.controller.js';
 import { getAllCategories, getCategorieById, createCategorie, updateCategorie, deleteCategorie } from '../controllers/categorie.controller.js';
 import { getAllPlats, getPlatById, createPlat, updatePlat, deletePlat, } from '../controllers/plat.controller.js';
+import { getAllCartes, getCarteById, createCarte, updateCarte, deleteCarte } from '../controllers/carte.controller.js';
 
 // Users
 router.get('/users', getAllUsers);
@@ -22,16 +23,12 @@ router.post('/plats', createPlat);
 router.put('/plats/:id', updatePlat);
 router.delete('/plats/:id', deletePlat);
 
-// images
-// router.post('/upload/:id', uploadImage);
-
-
 // Categories
 router.get('/categories', getAllCategories);
-router.get('/plats/:id', getCategorieById);
-router.post('/plats', createCategorie);
-router.put('/plats/:id', updateCategorie);
-router.delete('/plats/:id', deleteCategorie);
+router.get('/categories/:id', getCategorieById);
+router.post('/categories', createCategorie);
+router.put('/categories/:id', updateCategorie);
+router.delete('/categories/:id', deleteCategorie);
 
 // textes
 router.get('/textes', getAllTextes);
@@ -39,6 +36,13 @@ router.get('/textes/:id', getTexteById);
 router.post('/textes', createTexte);
 router.put('/textes/:id', updateTexte);
 router.delete('/textes/:id', deleteTexte);
+
+// Cartes
+router.get('/cartes', getAllCartes);
+router.get('/cartes/:id', getCarteById);
+router.post('/cartes', createCarte);
+router.put('/cartes/:id', updateCarte);
+router.delete('/cartes/:id', deleteCarte);
 
 // tests
 router.get('/test', renameFile);
