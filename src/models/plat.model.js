@@ -12,6 +12,8 @@ const Plat = sequelize.define(
   description: { type: Sequelize.STRING, allowNull: true },
   sous_titre: { type: Sequelize.STRING, allowNull: true },
   nom_image: { type: Sequelize.STRING, allowNull: true },
+  actif: { type: Sequelize.INTEGER, allowNull: true },
+
 },
 )
 
