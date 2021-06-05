@@ -5,6 +5,8 @@ import sequelize from '../configs/db-config.js';
 const Categorie = sequelize.define(
   'categorie', {
   libelle: { type: Sequelize.STRING, allowNull: false },
+  pathImage: { type: Sequelize.STRING, allowNull: false },
+
 },
 )
 
