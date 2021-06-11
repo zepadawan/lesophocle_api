@@ -11,6 +11,7 @@ import fs from 'fs';
 import _ from 'lodash';
 import uploadService from './src/services/upload.service.js';
 import sendmail from './src/services/email.service.js';
+import readDirectory from './src/services/files-directory.service.js';
 
 const app = express();
 app.use(cors());
@@ -32,8 +33,11 @@ app.use((req, res, next) => {
 global.__dirname = process.cwd();
 console.log('__dirname = ' + __dirname);
 
-// uploads<
+// uploads
 app.use('/upload', uploadService);
+
+// Files of Folder
+app.use('/files', readDirectory);
 
 // email
 app.post('/email', sendmail);

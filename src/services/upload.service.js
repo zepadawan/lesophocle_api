@@ -16,7 +16,6 @@ export async function uploadService(req, res, next) {
   } else {
     var image = req.files.sampleFile;
     var pathImage = req.body.pathImage;
-    console.log(image);
     let sampleFile = req.files.sampleFile;
     const uploadPath = dirpath.join(__dirname, "/public/images/", pathImage, sampleFile.name);
     console.log(uploadPath);
