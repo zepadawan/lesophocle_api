@@ -13,6 +13,7 @@ const Plat = sequelize.define(
   sous_titre: { type: Sequelize.STRING, allowNull: true },
   nom_image: { type: Sequelize.STRING, allowNull: true },
   actif: { type: Sequelize.INTEGER, allowNull: true },
+  allergenes: { type: Sequelize.STRING, allowNull: true },
 
 },
 )

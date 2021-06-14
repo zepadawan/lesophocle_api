@@ -5,6 +5,7 @@ import { getAllUsers, getUserById, loginUser, registerUser, updateUser, deleteUs
 import { renameFile, send_file_using_promise } from '../controllers/test.controller.js';
 import { getAllTextes, getTexteById, createTexte, updateTexte, deleteTexte } from '../controllers/texte.controller.js';
 import { getAllCategories, getCategorieById, createCategorie, updateCategorie, deleteCategorie } from '../controllers/categorie.controller.js';
+import { getAllAllergenes, getAllergeneById, createAllergene, updateAllergene, deleteAllergene } from '../controllers/allergene.controller.js';
 import { getAllPlats, getPlatById, createPlat, updatePlat, deletePlat, } from '../controllers/plat.controller.js';
 import { getAllCartes, getCarteById, createCarte, updateCarte, deleteCarte } from '../controllers/carte.controller.js';
 
@@ -29,6 +30,13 @@ router.get('/categories/:id', getCategorieById);
 router.post('/categories', createCategorie);
 router.put('/categories/:id', updateCategorie);
 router.delete('/categories/:id', deleteCategorie);
+
+// Allergenes
+router.get('/allergenes', getAllAllergenes);
+router.get('/allergenes/:id', getAllergeneById);
+router.post('/allergenes', createAllergene);
+router.put('/allergenes/:id', updateAllergene);
+router.delete('/allergenes/:id', deleteAllergene);
 
 // textes
 router.get('/textes', getAllTextes);
