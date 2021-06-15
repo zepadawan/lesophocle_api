@@ -5,11 +5,13 @@ export function readDirectory(req, res, next) {
   const folder = req.body.folder;
   const uploadPath = dirpath.join(__dirname, "/public/images/", folder);
   console.log(uploadPath);
-  let files = fs.readdirSync(uploadPath);
+  //  let files = (fs.readdirSync(uploadPath));
+  let files = (fs.readdirSync(uploadPath));
+
   res.send({
-    status: true,
+    status: 200,
     message: 'Files found !',
-    files: files,
+    args: files,
   });
   return files;
 };
