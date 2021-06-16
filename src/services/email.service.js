@@ -25,10 +25,14 @@ export async function sendmail(req, res, next) {
     tls: { rejectUnauthorized: false },
   });
 
+  if (!sender.emailTo) {
+    sender.emailTo = 'zepadawan@gmail.com';
+  }
+
   const mailOptions = {
     from: sender.email,
-    to: 'zepadawan@gmail.com',
-    subject: sender.subject,
+    to: sender.emailTo,
+    subject: '<h4>' + sender.subject + '</h4>',
     text: sender.message,
     html: "<p>" + sender.message + "</p>"
   }
