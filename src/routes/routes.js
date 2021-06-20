@@ -8,6 +8,7 @@ import { getAllCategories, getCategorieById, createCategorie, updateCategorie, d
 import { getAllAllergenes, getAllergeneById, createAllergene, updateAllergene, deleteAllergene } from '../controllers/allergene.controller.js';
 import { getAllPlats, getPlatById, createPlat, updatePlat, deletePlat, } from '../controllers/plat.controller.js';
 import { getAllCartes, getCarteById, createCarte, updateCarte, deleteCarte } from '../controllers/carte.controller.js';
+import { getAllMenuJour, getMenuJourById, createMenuJour, updateMenuJour, deleteMenuJour } from '../controllers/menujour.controller.js';
 
 // Users
 router.get('/users', getAllUsers);
@@ -30,6 +31,13 @@ router.get('/categories/:id', getCategorieById);
 router.post('/categories', createCategorie);
 router.put('/categories/:id', updateCategorie);
 router.delete('/categories/:id', deleteCategorie);
+
+// Categories
+router.get('/menujour', getAllMenuJour);
+router.get('/menujour/:id', getMenuJourById);
+router.post('/menujour', createMenuJour);
+router.put('/menujour/:id', updateMenuJour);
+router.delete('/menujour/:id', deleteMenuJour);
 
 // Allergenes
 router.get('/allergenes', getAllAllergenes);

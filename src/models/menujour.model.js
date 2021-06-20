@@ -5,11 +5,10 @@ import sequelize from '../configs/db-config.js';
 const MenuJour = sequelize.define(
   'menujour', {
   prixdujour: { type: Sequelize.STRING, allowNull: false },
-  menuviande: { type: Sequelize.STRING, allowNull: false },
-  menupoisson: { type: Sequelize.STRING, allowNull: false },
+  menuviande: { type: Sequelize.TEXT, allowNull: false },
+  menupoisson: { type: Sequelize.TEXT, allowNull: false },
   prixformule: { type: Sequelize.STRING, allowNull: false },
   prixmenu: { type: Sequelize.STRING, allowNull: false },
-
   libellesugg1: { type: Sequelize.STRING, allowNull: true },
   prixsugg1: { type: Sequelize.STRING, allowNull: true },
   descsugg1: { type: Sequelize.STRING, allowNull: true },
