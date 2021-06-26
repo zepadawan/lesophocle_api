@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 import { getAllUsers, getUserById, loginUser, registerUser, updateUser, deleteUser } from '../controllers/user.controller.js';
+import { getAllClients, getClientById, createClient, updateClient, deleteClient } from '../controllers/client.controller.js';
 import { renameFile, send_file_using_promise } from '../controllers/test.controller.js';
 import { getAllTextes, getTexteById, createTexte, updateTexte, deleteTexte } from '../controllers/texte.controller.js';
 import { getAllCategories, getCategorieById, createCategorie, updateCategorie, deleteCategorie } from '../controllers/categorie.controller.js';
@@ -18,6 +19,13 @@ router.put('/users/:id', updateUser);
 router.get('/users/:id', getUserById);
 router.delete('/users/:id', deleteUser);
 
+// Clients
+router.get('/clients', getAllClients);
+router.get('/clients/:id', getClientById);
+router.post('/clients', createClient);
+router.put('/clients/:id', updateClient);
+router.delete('/clients/:id', deleteClient);
+
 // Plats
 router.get('/plats', getAllPlats);
 router.get('/plats/:id', getPlatById);
@@ -32,7 +40,7 @@ router.post('/categories', createCategorie);
 router.put('/categories/:id', updateCategorie);
 router.delete('/categories/:id', deleteCategorie);
 
-// Categories
+// MenuJour
 router.get('/menujour', getAllMenuJour);
 router.get('/menujour/:id', getMenuJourById);
 router.post('/menujour', createMenuJour);
