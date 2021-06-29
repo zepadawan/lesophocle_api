@@ -11,6 +11,10 @@ import { getAllPlats, getPlatById, createPlat, updatePlat, deletePlat, } from '.
 import { getAllCartes, getCarteById, createCarte, updateCarte, deleteCarte } from '../controllers/carte.controller.js';
 import { getAllMenuJour, getMenuJourById, createMenuJour, updateMenuJour, deleteMenuJour } from '../controllers/menujour.controller.js';
 
+import { getAllEvenements, getEvenementById, createEvenement, updateEvenement, deleteEvenement } from '../controllers/evenement.controller.js';
+import { getAllInscriptions, getInscriptionById, createInscription, updateInscription, deleteInscription } from '../controllers/inscription.controller.js';
+
+
 // Users
 router.get('/users', getAllUsers);
 router.post('/users/register', registerUser);
@@ -67,6 +71,20 @@ router.get('/cartes/:id', getCarteById);
 router.post('/cartes', createCarte);
 router.put('/cartes/:id', updateCarte);
 router.delete('/cartes/:id', deleteCarte);
+
+// Evenements
+router.get('/evenements', getAllEvenements);
+router.get('/evenements/:id', getEvenementById);
+router.post('/evenements', createEvenement);
+router.put('/evenements/:id', updateEvenement);
+router.delete('/evenements/:id', deleteEvenement);
+
+// Inscriptions
+router.get('/inscriptions', getAllInscriptions);
+router.get('/inscriptions/:id', getInscriptionById);
+router.post('/inscriptions', createInscription);
+router.put('/inscriptions/:id', updateInscription);
+router.delete('/inscriptions/:id', deleteInscription);
 
 // tests
 router.get('/test', renameFile);
