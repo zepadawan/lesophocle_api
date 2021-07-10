@@ -10,7 +10,7 @@ const config = {
   server: {
     portServer: 8082,
     host_dev: 'https://localhost',
-    host_prod: 'https://lesophocle.com',
+    host_prod: 'https://www.lesophocle.zetools.fr',
   },
 
   email: {

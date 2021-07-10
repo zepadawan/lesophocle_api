@@ -62,9 +62,12 @@ console.log(host);
 app.set('port', port);
 
 // Certificate https
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/lesophocle.com/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/lesophocle.com/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/lesophocle.com/chain.pem', 'utf8');
+// const privateKey = fs.readFileSync('/etc/letsencrypt/live/lesophocle.com/privkey.pem', 'utf8');
+// const certificate = fs.readFileSync('/etc/letsencrypt/live/lesophocle.com/cert.pem', 'utf8');
+// const ca = fs.readFileSync('/etc/letsencrypt/live/lesophocle.com/chain.pem', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/lesophocle.zetools.fr/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/lesophocle.zetools.fr/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/lesophocle.zetools.fr/chain.pem', 'utf8');
 const credentials = {
   key: privateKey,
   cert: certificate,

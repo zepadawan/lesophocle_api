@@ -6,6 +6,10 @@ import { getAllClients, getClientById, createClient, updateClient, deleteClient 
 import { renameFile, send_file_using_promise } from '../controllers/test.controller.js';
 import { getAllTextes, getTexteById, createTexte, updateTexte, deleteTexte } from '../controllers/texte.controller.js';
 import { getAllCategories, getCategorieById, createCategorie, updateCategorie, deleteCategorie } from '../controllers/categorie.controller.js';
+
+import { getAllBoissons, getBoissonById, createBoisson, updateBoisson, deleteBoisson, } from '../controllers/boisson.controller.js';
+import { getAllCategoriesBoisson, getCategorieBoissonById, createCategorieBoisson, updateCategorieBoisson, deleteCategorieBoisson } from '../controllers/categorie_boisson.controller.js';
+
 import { getAllAllergenes, getAllergeneById, createAllergene, updateAllergene, deleteAllergene } from '../controllers/allergene.controller.js';
 import { getAllPlats, getPlatById, createPlat, updatePlat, deletePlat, } from '../controllers/plat.controller.js';
 import { getAllCartes, getCarteById, createCarte, updateCarte, deleteCarte } from '../controllers/carte.controller.js';
@@ -43,6 +47,21 @@ router.get('/categories/:id', getCategorieById);
 router.post('/categories', createCategorie);
 router.put('/categories/:id', updateCategorie);
 router.delete('/categories/:id', deleteCategorie);
+
+// Boissons
+router.get('/boissons', getAllBoissons);
+router.get('/boissons/:id', getBoissonById);
+router.post('/boissons', createBoisson);
+router.put('/boissons/:id', updateBoisson);
+router.delete('/boissons/:id', deleteBoisson);
+
+// Categories de Boissons
+router.get('/categoriesboisson', getAllCategoriesBoisson);
+router.get('/categoriesboisson/:id', getCategorieBoissonById);
+router.post('/categoriesboisson', createCategorieBoisson);
+router.put('/categoriesboisson/:id', updateCategorieBoisson);
+router.delete('/categoriesboisson/:id', deleteCategorieBoisson);
+
 
 // MenuJour
 router.get('/menujour', getAllMenuJour);
